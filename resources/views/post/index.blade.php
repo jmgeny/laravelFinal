@@ -8,7 +8,9 @@
 	</aside>
 	<article class="col-sm-8">
 		<div>
-			<h1>Posteos <a href="{{route('post.create')}}" class="btn btn-primary pull-right">Nuevo</a></h1>
+			<h1>Listado de Posteos <a href="{{route('post.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+			</h1>
+			@include('post.comp.info');
 			
                 @foreach ($posteo as $post)
 	                <div class="panel panel-default">
@@ -19,12 +21,12 @@
 	                  		Ver
 	                  	</a>
 	                    <a class="btn btn-primary" href="{{route('post.edit',$post->id)}}">Editar</a>
-	                    {{--
-	                   <form action="{{route('post.destroy',$post->id)}}" method="POST" class="pull-right">
-	                  {{ csrf_field() }}
-	                    <input type="hidden" name="_method" value="DELETE">
-	                    <button class="btn btn-primary">Eliminar</button>
-	                  </form> --}}
+	                    <form action="{{route('post.destroy',$post->id)}}" method="POST" class="pull-right">
+                  			{{ csrf_field() }}
+                    		<input type="hidden" name="_method" value="DELETE">
+                    		<button class="btn btn-primary">Eliminar</button>
+                  		</form>
+
 	                </div>
 	                </div>
 	                <h2>Aca los comentarios</h2>

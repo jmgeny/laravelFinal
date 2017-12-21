@@ -23,8 +23,11 @@
                 </div>      			
       		</div>
       		<div class="col-sm-8">
-            <div><a href="{{route('post.create')}}" class="btn btn-primary pull-right">Nuevo</a></div>
-            {{$posteo->links()}}
+            
+            <a href="{{route('post.create')}}" class="btn btn-primary pull-right">Nuevo</a>
+              
+              {{$posteo->links()}}
+            
             <article>
               @include('post.comp.info');
                 @foreach ($posteo as $post)

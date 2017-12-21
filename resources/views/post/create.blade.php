@@ -17,6 +17,7 @@
             <a href="{{route('post.index')}}" class="btn btn-primary pull-right">Listado</a>
   
           </h2>
+@include('post.comp.error');
 
           {!! Form::open(['route' => 'post.store']) !!}
             @include('post.comp.form')

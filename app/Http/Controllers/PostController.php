@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use soyDeporte\Post;
 use Illuminate\Support\Facades\Auth;
 use soyDeporte\User;
+use soyDeporte\Http\Requests\PostRequest;
 
 
 class PostController extends Controller
@@ -41,10 +42,44 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        return 'store';
+        $post = new Post;
+        $u_id = Auth::id();
+
+        $post->titulo = $request->titulo;
+        $post->texto = $request->texto;
+        $post->estado = 'A';
+        $post->user_id = $u_id;
+        $post->categori_id = 1;
+
+        $post->save();
+
+        return redirect() -> route('post.index') -> with('info','Se creo un nuevo POSTEO');
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(PostRequest $request, $id)
+    {
+        $post = Post::find($id);
+        $u_id = Auth::id();
+
+        $post->titulo = $request->titulo;
+        $post->texto = $request->texto;
+        $post->estado = 'A';
+        $post->user_id = $u_id;
+        $post->categori_id = 1;
+
+        $post->save();
+
+        return redirect() -> route('post.index') -> with('info','El post ' . $post->id . ' fue actualizado ');
+    }    
 
     /**
      * Display the specified resource.
@@ -80,18 +115,6 @@ class PostController extends Controller
                "posts"=>$posts, 
                "user"=>$user 
         ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     /**
