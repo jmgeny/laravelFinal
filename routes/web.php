@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('post','PostController');
+
+Route::get('deportes', 'DeporteController@index');

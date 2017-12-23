@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use soyDeporte\Deporte;
 
-class DatabaseSeeder extends Seeder
+class DeporteTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(PostTableSeeder::class);
-        $this->call(DeporteTableSeeder::class);
+        //
     }
 }

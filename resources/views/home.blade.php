@@ -19,6 +19,7 @@
                 	<ul>
                 		<li><strong>Nombre:</strong> {{$user->name}}</li>
                 		<li><strong>e-mail:</strong> {{$user->email}}</li>
+                    <li><strong>Deporte:</strong> Deporte </li>
                 	</ul>
                 </div>      			
       		</div>

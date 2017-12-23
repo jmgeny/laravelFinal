@@ -2,18 +2,19 @@
 @section('titulo', 'Login')
 
 @section('content')
+
 <section class="container">
-    <div class="row">
+    <section class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Entrar</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Direccion de E-Mail</label>
+                            <label for="email" class="col-md-4 control-label">e-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -53,7 +54,7 @@
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Login
+                                    Entrar
                                 </button>
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -65,6 +66,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
+
 @endsection
