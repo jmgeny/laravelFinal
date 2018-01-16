@@ -5,6 +5,7 @@ namespace soyDeporte\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use soyDeporte\Post;
+use soyDeporte\Deporte;
 
 class HomeController extends Controller
 {
@@ -27,13 +28,15 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $myid = $user->id;
+        $deporte = Deporte::find('id');
 
         // $post = Post::orderBy('id','DESC')->paginate(3);
         $post = Post::where('user_id','=',$myid)->paginate(2);
 
         return view('home', [
             "user" => $user, 
-            "posteo" => $post
+            "posteo" => $post,
+            "deporte" => $deporte,
         ]);
     }
 }
