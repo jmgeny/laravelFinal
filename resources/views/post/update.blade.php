@@ -12,7 +12,7 @@
 
         <!-- Post Content Column -->
         <div class="col-sm-8">
-          Centro
+          Update Post
 
         </div>
 

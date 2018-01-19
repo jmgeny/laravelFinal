@@ -1,5 +1,5 @@
 @extends('post.plantilla')
-@section('titulo', 'Crear Post')
+@section('titulo', 'Editar')
 
 @section('content')
 
@@ -12,17 +12,7 @@
 
         <!-- Post Content Column -->
         <div class="col-sm-8">
-          <h2>
-            Nuevo post
-            <a href="{{route('post.index')}}" class="btn btn-primary pull-right">Listado</a>
-  
-          </h2>
-
-          @include('post.comp.error');
-
-          {!! Form::open(['route' => 'post.store']) !!}
-            @include('post.comp.form')
-          {!! Form::close() !!}
+          Update comentario
 
         </div>
 

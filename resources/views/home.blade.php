@@ -1,4 +1,4 @@
-@extends('post.plantilla')
+ @extends('post.plantilla')
 @section('titulo', 'Mi Perfil')
 
 @section('content')

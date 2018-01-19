@@ -2,10 +2,11 @@
 @section('titulo', 'Editar')
 
 @section('content')
+
 @guest
                         
   <h1>
-    Debe ingresar para editar y borrar un post.
+    Debe estar conectado para realizar un post <li><a href="{{ route('login') }}">Entrar</a></li>
   </h1>   
 
 @else
