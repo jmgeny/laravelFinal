@@ -7,6 +7,7 @@ use soyDeporte\Post;
 use Illuminate\Support\Facades\Auth;
 use soyDeporte\User;
 use soyDeporte\Http\Requests\PostRequest;
+use soyDeporte\Coment;
 
 
 class PostController extends Controller
@@ -89,14 +90,17 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        
-
         $posts = Post::find($id);
-        $user = User::find($posts->user_id);
+        $user_post = User::find($posts->user_id);
+        // $coments = Coment::all();
+        $coments = Coment::where('post_id', '=', $id)->get();
+        $users = User::all();
 
         return view('post.show',[
                "posts"=>$posts, 
-               "user"=>$user 
+               "user_post"=>$user_post,
+               "coments"=>$coments,
+               "users" =>$users 
         ]);
     }
 

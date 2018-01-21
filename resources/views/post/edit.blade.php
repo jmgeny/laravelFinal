@@ -23,7 +23,7 @@
             <a href="{{route('post.index')}}" class="btn btn-primary pull-right">Listado</a>
   
           </h2>
-          @include('post.comp.error');          
+          @include('error');          
           {!! Form::model($posts, ['route' => ['post.update', $posts->id], 'method' => 'PUT']) !!}
             @include('post.comp.form')
           {!! Form::close() !!}

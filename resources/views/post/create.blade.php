@@ -18,7 +18,7 @@
   
           </h2>
 
-          @include('post.comp.error');
+          @include('error')
 
           {!! Form::open(['route' => 'post.store']) !!}
             @include('post.comp.form')
