@@ -1,4 +1,4 @@
- @extends('post.plantilla')
+@extends('post.plantilla')
 @section('titulo', 'Mi Perfil')
 
 @section('content')
@@ -10,28 +10,25 @@
         	<h1 class="page-header">Bienvenido {{$user->name}}</h1>
         @endguest
 
-      	<div class="row">
-      		<div class="col-sm-4">
+      	<section class="row">
+      		<article class="col-sm-4">
                 <div>
                   <img src="img/user.png" class="img-thumbnail" alt="">
                 </div>
                 <div>
                 	<ul>
-                		<li><strong>Nombre:</strong> {{$user->name}}</li>
-                		<li><strong>e-mail:</strong> {{$user->email}}</li>
-                    <li><strong>Deporte:</strong> Deporte </li>
+                		<li><strong>Nombre Usuario:</strong> {{$user->name}} </li>
+                		<li><strong>e-mail:</strong> {{$user->email}} </li>
+                    <li><strong>Deporte:</strong> {{$deporte->deporte}} </li>
                 	</ul>
                 </div>      			
-      		</div>
-      		<div class="col-sm-8">
-            
+      		</article>
+
             <a href="{{route('post.create')}}" class="btn btn-primary pull-right">Nuevo</a>
-              
-              {{$posteo->links()}}
-            
-            <article>
-              @include('post.comp.info');
-                @foreach ($posteo as $post)
+
+          <article class="col-sm-8">
+            @include('post.comp.info');
+              @foreach ($posteo as $post)
 
                 <div class="panel panel-default">
                   <div class="panel-heading">{{$post->titulo}}</div>
@@ -42,21 +39,16 @@
                     </a>
                     <a class="btn btn-primary" href="{{route('post.edit',$post->id)}}">Editar</a>
                    <form action="{{route('post.destroy',$post->id)}}" method="POST" class="pull-right">
-                  {{ csrf_field() }}
+                    {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE">
                     <button class="btn btn-primary">Eliminar</button>
-                  </form> 
+                    </form> 
+                  </div>
                 </div>
-                </div>
-                <h2>Aca los comentarios</h2>
-                @endforeach
-            </article>
+              @endforeach
+          </article>
             {{$posteo->links()}}
-
-                
-       		</div>
-      	</div>
-
+      	</section>
       </section>
 
 @endsection

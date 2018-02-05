@@ -95,6 +95,7 @@ class PostController extends Controller
         // $coments = Coment::all();
         $coments = Coment::where('post_id', '=', $id)->get();
         $users = User::all();
+        
 
         return view('post.show',[
                "posts"=>$posts, 

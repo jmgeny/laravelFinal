@@ -1,9 +1,9 @@
-@extends('post.plantilla')
+@extends('auth.layouts')
 @section('titulo', 'Login')
 
 @section('content')
 
-<section class="container">
+<section class="container reg_log">
     <section class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
@@ -56,11 +56,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     Entrar
                                 </button>
-
+                                <a href="{{ route('register') }}" class="btn btn-primary pull-right">Registrarte</a>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Perdio su Password?
+                                    Olivdo su Password?
                                 </a>
                             </div>
+                            
+                            
                         </div>
                     </form>
                 </div>

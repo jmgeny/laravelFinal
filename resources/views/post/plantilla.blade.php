@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 	<header>
 		<nav class="navbar navbar-default">
@@ -17,8 +18,7 @@
 		      <a class="navbar-brand" href="{{ url('/') }}">Soy Deporte</a>
 		    </div>
 		    <ul class="nav navbar-nav">
-		      <li class="active"><a href="{{ url('/') }}">Inicio</a></li>
-		      <li><a href="{{ url('/home') }}">Mi perfil</a></li>
+		      <li><a href="{{ url('/home') }}"><strong>{{ Auth::user()->name }}</strong></a></li>
 		      <li><a href="{{ route('post.index') }}">Post</a></li>
 				@guest
 		      <li><a href="{{ route('register') }}">Registrarte</a></li>

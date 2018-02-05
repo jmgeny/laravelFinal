@@ -16,16 +16,15 @@ class CreateAtletasTable extends Migration
         Schema::create('atletas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('asociacion_id');
+            $table->integer('equipo_id');
+            $table->integer('localidad_id');
             $table->string('apellido');
-            $table->string('apodo');
+            $table->string('nombre');
+            $table->string('dni');            
+            $table->string('genero');
             $table->string('telefono');
-            $table->string('sexo');
-            $table->string('dni');
-            $table->integer('pais_id');
-            $table->integer('prov_id');
-            $table->integer('loc_id');
             $table->string('direccion');
-            $table->string('cp');
             $table->string('image');
             $table->timestamps();
         });

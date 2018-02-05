@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style>
+        <link rel="stylesheet" href="css/style.css">
+<style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -35,7 +36,7 @@
                 position: relative;
             }
 
-/*            .top-right {
+            /*.top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
@@ -62,7 +63,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+</style> 
     </head>
     <body>
         <div class="flex-center position-ref full-height">

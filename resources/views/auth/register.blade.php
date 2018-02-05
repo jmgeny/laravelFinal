@@ -1,8 +1,8 @@
-@extends('post.plantilla')
+@extends('auth.layouts')
 @section('titulo', 'Registro')
 
 @section('content')
-<div class="container">
+<section class="container reg_log">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
@@ -40,21 +40,7 @@
                             </div>
                         </div>
 
-{{--                         <div class="form-group">
-                            <label for="deporte" class="col-md-4 control-label">Deporte</label>
-
-                            <div class="col-md-6">
-                                <input id="deporte" type="text" class="form-control" name="email" value="" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="foto" class="col-md-4 control-label">Foto</label>
-                            <div class="col-md-6">    
-                                <input type="file" name="foto" class="form-control">
-                            </div>
-                        </div> --}}
-                        
+                       
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -83,11 +69,12 @@
                                     Registro
                                 </button>
                             </div>
+                            <a href="{{ route('login') }}" class="btn btn-primary">Entrar</a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

@@ -20,15 +20,21 @@
         </div>
 
       <div class="media mb-4">
-              <div class="well">
                   @foreach($coments as $coment)
-                    Comenta: <p>{{$coment->texto}}</p><br>
+                 
+                  {{-- agregar este resultado reemplazando el uno abajo --}}
+                      <div class="well">
+                      Comenta:{{$users[1]->name}}
+
+                      <p>{{$coment->texto}}</p>
+                        <br>
+                      </div>      
+                  <br>
                   @endforeach
-              </div>
       </div>      
       </article>
       <aside class="col-sm-4">
-        aside
+  
       </aside>
     </section>    
   </section>
