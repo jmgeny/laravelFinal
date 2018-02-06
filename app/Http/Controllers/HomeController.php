@@ -29,8 +29,9 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $myid = $user->id;
-        $deporte = Deporte::find($user->deporte_id);
+        $atleta = Atleta::where('user_id', '=', $myid)->get();
 
+        $deporte = Deporte::find($atleta[0]->deporte_id);
 
         // $post = Post::orderBy('id','DESC')->paginate(3);
         $post = Post::where('user_id','=',$myid)
@@ -41,6 +42,7 @@ class HomeController extends Controller
             "user" => $user, 
             "posteo" => $post,
             "deporte" => $deporte,
+            "atleta" => $atleta,
         ]);
     }
 }

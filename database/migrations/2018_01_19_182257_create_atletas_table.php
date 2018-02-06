@@ -19,6 +19,7 @@ class CreateAtletasTable extends Migration
             $table->integer('asociacion_id');
             $table->integer('equipo_id');
             $table->integer('localidad_id');
+            $table->integer('deporte_id');
             $table->string('apellido');
             $table->string('nombre');
             $table->string('dni');            

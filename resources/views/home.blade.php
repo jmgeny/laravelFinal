@@ -2,7 +2,6 @@
 @section('titulo', 'Mi Perfil')
 
 @section('content')
-
       <section class="container">
       	@guest
       		<h1 class="page-header">Invitado <a href="{{ route('login') }}">Ingresar</a></h1>
@@ -12,14 +11,26 @@
 
       	<section class="row">
       		<article class="col-sm-4">
+            <div>
+              <a href="#" class="btn btn-primary">Editar</a>
+            </div>
                 <div>
                   <img src="img/user.png" class="img-thumbnail" alt="">
                 </div>
                 <div>
                 	<ul>
-                		<li><strong>Nombre Usuario:</strong> {{$user->name}} </li>
-                		<li><strong>e-mail:</strong> {{$user->email}} </li>
-                    <li><strong>Deporte:</strong> {{$deporte->deporte}} </li>
+                		<li><strong>Nombre Usuario: </strong> {{$user->name}} </li>
+                		<li><strong>e-mail: </strong> {{$user->email}} </li>
+                    <li><strong>Deporte: </strong> {{$deporte->deporte}} </li>
+                    <li><strong>Nombre: </strong>{{$atleta[0]->nombre}}</li>
+                    <li><strong>Apellido: </strong>{{$atleta[0]->apellido}}</li>
+                    <li><strong>DNI: </strong>{{$atleta[0]->dni}}</li>
+                    <li><strong>Genero: </strong>{{$atleta[0]->genero}}</li>
+                    <li><strong>Telefono: </strong>{{$atleta[0]->telefono}}</li>
+                    <li><strong>Dirección: </strong>{{$atleta[0]->direccion}}</li>
+                    <li><strong>Localidad: </strong></li>
+                    <li><strong>Asociación: </strong></li>
+                    <li><strong>Equipo: </strong></li>
                 	</ul>
                 </div>      			
       		</article>

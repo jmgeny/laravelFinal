@@ -3,6 +3,7 @@
 namespace soyDeporte\Http\Controllers\Auth;
 
 use soyDeporte\User;
+use soyDeporte\Atleta;
 use soyDeporte\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -51,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            // 'deporte_id'=>'required',
         ]);
     }
 
@@ -66,17 +68,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            // 'apellido' => $data[],
-            // 'dni' => $data[],
-            // 'sexo' => $data[],
-            // 'telefono' => $data[],
-            // 'apodo' => $data[],
-            // 'cp' => $data[],
-            // 'direccion' => $data[],
-            // 'loc_id' => $data[],
-            // 'prov_id' => $data[],
-            // 'pais_id' => $data[],
-
         ]);
+        
     }
 }
