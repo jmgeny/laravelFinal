@@ -13,6 +13,7 @@
 
         <div">
    @include('error')
+   
         {!! Form::open(['route' => 'coment.store', $posts->id]) !!}
             @include('comment.comp.form')
         {!! Form::close() !!}

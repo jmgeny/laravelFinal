@@ -15,4 +15,9 @@ class Deporte extends Model
     protected $fillable = [
         'deporte',
     ];
+
+    public funciton atleta()
+    {
+    	return $this->belongsToMany("soyDeporte\Atleta");
+    }
 }

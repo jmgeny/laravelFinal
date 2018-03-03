@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // Relaciones Uno a Uno
+    public function atleta()
+    {
+        return $this->hasone("soyDeporte\Atleta");
+    }
+
+   
 }

@@ -12,7 +12,9 @@
       	<section class="row">
       		<article class="col-sm-4">
             <div>
-              <a href="#" class="btn btn-primary">Editar</a>
+              {{-- @if () --}}
+                <a href="#" class="btn btn-primary">Editar</a>
+              {{-- @endif --}}
             </div>
                 <div>
                   <img src="img/user.png" class="img-thumbnail" alt="">
@@ -21,13 +23,15 @@
                 	<ul>
                 		<li><strong>Nombre Usuario: </strong> {{$user->name}} </li>
                 		<li><strong>e-mail: </strong> {{$user->email}} </li>
-                    <li><strong>Deporte: </strong> {{$deporte->deporte}} </li>
-                    <li><strong>Nombre: </strong>{{$atleta[0]->nombre}}</li>
-                    <li><strong>Apellido: </strong>{{$atleta[0]->apellido}}</li>
-                    <li><strong>DNI: </strong>{{$atleta[0]->dni}}</li>
-                    <li><strong>Genero: </strong>{{$atleta[0]->genero}}</li>
-                    <li><strong>Telefono: </strong>{{$atleta[0]->telefono}}</li>
-                    <li><strong>Dirección: </strong>{{$atleta[0]->direccion}}</li>
+                    <li><strong>Apellido: </strong> {{$user->atleta->apellido}} </li>
+                    <li><strong>Nombre: </strong>{{$user->atleta->nombre}}</li>
+                    <li><strong>Deporte: </strong>  </li>
+                    
+                    <li><strong>Apellido: </strong>{{$user->atleta->apellido}}</li>
+                    <li><strong>DNI: </strong>{{$user->atleta->dni}}</li>
+                    <li><strong>Genero: </strong>{{$user->atleta->genero}}</li>
+                    <li><strong>Telefono: </strong>{{$user->atleta->telefono}}</li>
+                    <li><strong>Dirección: </strong>{{$user->atleta->direccion}}</li> 
                     <li><strong>Localidad: </strong></li>
                     <li><strong>Asociación: </strong></li>
                     <li><strong>Equipo: </strong></li>

@@ -28,12 +28,12 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        
         $myid = $user->id;
-        $atleta = Atleta::where('user_id', '=', $myid)->get();
+        // $atleta = Atleta::where('user_id', '=', $myid)->get();
 
-        $deporte = Deporte::find($atleta[0]->deporte_id);
+        // $deporte = Deporte::find($atleta[0]->deporte_id);
 
-        // $post = Post::orderBy('id','DESC')->paginate(3);
         $post = Post::where('user_id','=',$myid)
                 ->orderBy('id','DESC')
                 ->paginate(5);
@@ -41,8 +41,8 @@ class HomeController extends Controller
         return view('home', [
             "user" => $user, 
             "posteo" => $post,
-            "deporte" => $deporte,
-            "atleta" => $atleta,
+            // "deporte" => $deporte,
+            // "atleta" => $atleta,
         ]);
     }
 }

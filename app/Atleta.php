@@ -24,4 +24,14 @@ class Atleta extends Model
     	'direccion',
     	'image',
     	];
+
+        public function user()
+        {
+            return $this->belongsTo("soyDeporte\User");
+        }
+
+    public function deporte()
+    {
+        return $this->belongsToMany("soyDeporte\Deporte");
+    }        
 }
